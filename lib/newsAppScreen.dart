@@ -1,11 +1,11 @@
+import 'package:coders/data/Cubit.dart';
+import 'package:coders/data/States.dart';
+import 'package:coders/widgetsApisData.dart';
+import 'package:coders/screens/search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/API_project/CubitApp.dart';
-import 'package:flutter_app1/API_project/StatesApp.dart';
-import 'package:flutter_app1/API_project/screens/search.dart';
-import 'package:flutter_app1/shared/components/components.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path/path.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class newsApp extends StatelessWidget {
   Widget build(BuildContext context) {

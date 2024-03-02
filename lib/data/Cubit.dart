@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:cubit_form/cubit_form.dart';
-import 'package:flutter_app1/API_project/StatesApp.dart';
-import 'package:flutter_app1/API_project/screens/businessScreen.dart';
-import 'package:flutter_app1/API_project/dio_helper.dart';
-import 'package:flutter_app1/API_project/screens/settingScreen.dart';
-import 'package:flutter_app1/API_project/screens/sienceScreen.dart';
-import 'package:flutter_app1/API_project/screens/sportsScreen.dart';
+import 'package:coders/data/States.dart';
+import 'package:coders/data/dio_helper.dart';
+import 'package:coders/screens/businessScreen.dart';
+import 'package:coders/screens/settingScreen.dart';
+import 'package:coders/screens/sienceScreen.dart';
+import 'package:coders/screens/sportsScreen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class newsAppCubit extends Cubit<newsAppStates>
  {

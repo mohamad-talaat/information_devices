@@ -1,17 +1,17 @@
-import 'package:cubit_form/cubit_form.dart';
+import 'package:coders/data/Cubit.dart';
+import 'package:coders/data/States.dart';
+import 'package:coders/data/dio_helper.dart';
+import 'package:coders/newsAppScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app1/API_project/CubitApp.dart';
-import 'package:flutter_app1/API_project/StatesApp.dart';
-import 'package:flutter_app1/API_project/dio_helper.dart';
-import 'package:flutter_app1/API_project/newsAppScreen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 main(){
-  runApp(myApp());
-   new myApp();
-DioHelper.init();
+  runApp(MyApp());
+    DioHelper.init();
 }
-class myApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(context) {
     return
@@ -21,16 +21,14 @@ class myApp extends StatelessWidget {
             builder: (context, state) {return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
-                    textTheme: TextTheme(bodyText1: TextStyle(
+                    textTheme: const TextTheme(bodyText1: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                       fontSize: 17.0,)),
                     primarySwatch: Colors.deepOrange,
-                    appBarTheme: AppBarTheme(backgroundColor: Colors.white,
+                    appBarTheme: const AppBarTheme(backgroundColor: Colors.white,
                         iconTheme: IconThemeData(color: Colors.black),
                         elevation: 0.0,
-                        // دا علشان يخفي الخط الفاصل مابين الاباار والباضي
-                        backwardsCompatibility: false,
                         // عشان اقدر اتحكم في الاستيتس بار
                         systemOverlayStyle: SystemUiOverlayStyle(
                             statusBarColor: Colors.white,
@@ -42,38 +40,31 @@ class myApp extends StatelessWidget {
                       //اعدادات ثابته لأي نص
                       // خليت اعدادات جميع النصوص واحده علشان اوفر ف الكود بحيث لكا اجي اكتب تيكست التيكست ستايل هيكون موجود
                     ),
-                    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                       selectedItemColor: Colors.deepOrange,
                       backgroundColor: Colors.white,
                       type: BottomNavigationBarType.fixed,),
                     // اعدادات ثابته لاي بوتم ناف بار
                     scaffoldBackgroundColor: Colors.white,
                     // وحدنا لون الاسكافولد
-                    floatingActionButtonTheme: FloatingActionButtonThemeData(
+                    floatingActionButtonTheme: const FloatingActionButtonThemeData(
                         backgroundColor: Colors.deepOrange)
                 ),
                 darkTheme: ThemeData(
-                    textTheme: TextTheme(bodyText1: TextStyle(
+                    textTheme: const TextTheme(bodyText1: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 17.0,)),
                     primarySwatch: Colors.deepOrange,
-                    appBarTheme: AppBarTheme(backgroundColor: Colors.black26,
+                    appBarTheme: const AppBarTheme(backgroundColor: Colors.black26,
                       //   iconTheme:IconThemeData(color: Colors.black),
                       elevation: 0.0,
-                      // دا علشان يخفي الخط الفاصل مابين الاباار والباضي
-                      backwardsCompatibility: false,
-                      // عشان اقدر اتحكم في الاستيتس بار
                       systemOverlayStyle: SystemUiOverlayStyle(
                           statusBarColor: Colors.black38,
                           statusBarIconBrightness: Brightness.light),
-                      //  (الاستيتس بار)الجزء العلوي اللي فيه البطاريه والشريحه
-                      //   titleTextStyle: TextStyle(color:Colors.black, fontWeight:FontWeight.bold , fontSize: 25.0,)
-                      //اعدادات ثابته لأي نص
-                      // خليت اعدادات جميع النصوص واحده علشان اوفر ف الكود بحيث لكا اجي اكتب تيكست التيكست ستايل هيكون موجود
                     ),
-                    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                      unselectedIconTheme: IconThemeData(color: Colors.white),
+                    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+                      unselectedIconTheme: const IconThemeData(color: Colors.white),
                       // icon not selected
                       selectedIconTheme: IconThemeData(color: Colors.white),
                       // icon selected
@@ -88,7 +79,7 @@ class myApp extends StatelessWidget {
                     // اعدادات ثابته لاي بوتم ناف بار
                     scaffoldBackgroundColor: Colors.black26,
                     // وحدنا لون الاسكافولد
-                    floatingActionButtonTheme: FloatingActionButtonThemeData(
+                    floatingActionButtonTheme: const FloatingActionButtonThemeData(
                         backgroundColor: Colors.deepOrange)
                 ),
                themeMode:newsAppCubit.get(context).adark?ThemeMode.dark :ThemeMode.light,

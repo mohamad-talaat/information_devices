@@ -1,11 +1,11 @@
 
-import 'package:cubit_form/cubit_form.dart';
+import 'package:coders/data/Cubit.dart';
+import 'package:coders/data/States.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../ApisData.dart';
-import '../CubitApp.dart';
-import '../StatesApp.dart';
+import '../widgetsApisData.dart';
 
 class SearchScreen extends StatelessWidget {
 var searchController = TextEditingController();
